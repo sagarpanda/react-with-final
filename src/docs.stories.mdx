@@ -1,0 +1,50 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Checkbox from '../src/Checkbox';
+import withFinalForm from '../src/index';
+
+<Meta title="ReadMe" />
+
+
+# With Final Form
+
+A higher order component to make form element final form field compatible.
+
+```javascript
+import withFinalForm from 'react-with-final-form';
+```
+
+Use static `finalProps` to map `Field` props to `TextField` props
+```javascript
+const TextField = ({ label, helpText, meta, ...rest }) => {
+  console.log(rest);
+  return (
+    <BaseForm.Group controlId="formBasicEmail">
+      <BaseForm.Label>{label}</BaseForm.Label>
+      <BaseForm.Control type="text" {...rest} />
+      <BaseForm.Text className="text-muted">{helpText}</BaseForm.Text>
+    </BaseForm.Group>
+  );
+};
+
+TextField.finalProps = {
+  type: 'text',
+  isValid: false
+};
+```
+Use in application
+
+```javascript
+const FinalTextField = withFinalForm(TextField);
+
+<Form
+  onSubmit={onSubmit}
+  render={({ handleSubmit }) => (
+    <FinalTextField
+      label="Full Name"
+      name="name"
+      placeholder="enter your full name"
+      helpText="We'll never share your email with anyone else."
+    />
+  )}
+/>
+```

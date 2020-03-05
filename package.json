@@ -1,0 +1,52 @@
+{
+  "name": "react-with-final-form",
+  "version": "1.0.0",
+  "description": "A higher order component for final form.",
+  "main": "libs/index.js",
+  "homepage": "https://sagarpanda.github.io/react-with-final-form",
+  "repository": "https://github.com/sagarpanda/react-with-final-form.git",
+  "author": "Sagar Panda",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "component",
+    "form",
+    "final-form",
+    "react-final-form"
+  ],
+  "files": [
+    "libs"
+  ],
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build:libs": "rm -rf libs && babel src -d libs",
+    "build:story": "build-storybook -o docs",
+    "start": "start-storybook -p 9001"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/react": "^5.3.14",
+    "babel-loader": "^8.0.6",
+    "bootstrap": "^4.4.1",
+    "final-form": "^4.18.7",
+    "react": "^16.8.0",
+    "react-bootstrap": "^1.0.0-beta.17",
+    "react-dom": "^16.8.0",
+    "react-final-form": "^6.3.5"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "final-form": "^4.18.7",
+    "react": "^16.8.0",
+    "react-final-form": "^6.3.5"
+  }
+}
